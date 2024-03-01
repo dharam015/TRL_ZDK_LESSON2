@@ -1,0 +1,26 @@
+projection;
+use draft;
+//strict ( 2 );
+
+define behavior for ZC_DK_RAP_TRAVEL alias Travel
+//use etag // for locking
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Booking { create; with draft;}
+  // add actions
+  use action acceptTravel;
+  use action rejectTravel;
+
+}
+
+define behavior for ZC_DK_RAP_BOOKING alias Booking
+//use etag // for locking
+{
+  use update;
+  use delete;
+
+  use association _Travel { with draft; }
+}

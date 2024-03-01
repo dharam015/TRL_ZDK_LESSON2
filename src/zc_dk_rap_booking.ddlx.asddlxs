@@ -1,0 +1,62 @@
+@Metadata.layer: #CORE
+@UI: {
+
+headerInfo: { typeName: 'Booking',
+
+typeNamePlural: 'Bookings',
+
+title: { type: #STANDARD, value: 'BookingId' } } }
+annotate view ZC_DK_RAP_BOOKING with
+{
+  @UI.facet: [ { id: 'Booking',
+
+  purpose: #STANDARD,
+
+  type: #IDENTIFICATION_REFERENCE,
+
+  label: 'Booking',
+
+  position: 10 } ]
+
+  @UI: { identification: [ { position: 10, label: 'Booking UUID' } ] }
+  BookingUuid;
+  @UI.hidden: true
+  TravelUuid;
+  @UI: { lineItem: [ { position: 20 } ],
+
+  identification: [ { position: 20 } ] }
+  BookingId;
+  @UI: { lineItem: [ { position: 30 } ],
+
+  identification: [ { position: 30 } ] }
+  BookingDate;
+  @UI: { lineItem: [ { position: 40 } ],
+
+  identification: [ { position: 40 } ] }
+  CustomerId;
+  @UI: { lineItem: [ { position: 50 } ],
+
+  identification: [ { position: 50 } ] }
+  CarrierId;
+  @UI: { lineItem: [ { position: 60 } ],
+
+  identification: [ { position: 60 } ] }
+  ConnectionId;
+  @UI: { lineItem: [ { position: 70 } ],
+
+  identification: [ { position: 70 } ] }
+  FlightDate;
+  @UI: { lineItem: [ { position: 80 } ],
+
+  identification: [ { position: 80 } ] }
+  FlightPrice;
+
+  @UI.hidden: true
+  CreatedBy;
+  @UI.hidden: true
+  LastChangedBy;
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+
+}
